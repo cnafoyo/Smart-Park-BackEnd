@@ -1,0 +1,23 @@
+{
+  "name": "smart-park-backend",
+  "version": "1.0.0",
+  "description": "Smart Parking App for city",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BandLinc/Smart-Park-BackEnd.git"
+  },
+  "keywords": [
+    "smart",
+    "app"
+  ],
+  "author": "Evanson Barasa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BandLinc/Smart-Park-BackEnd/issues"
+  },
+  "homepage": "https://github.com/BandLinc/Smart-Park-BackEnd#readme"
+}
