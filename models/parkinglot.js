@@ -5,6 +5,10 @@ const packingLotSchema =new mongoose.Schema ({
         type:String,
         required:true
     },
+    initial: {
+        type:String,
+        required:true
+    },
     total_spots : {
         type: Number,
         required:true

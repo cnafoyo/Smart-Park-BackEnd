@@ -18,6 +18,7 @@ router.get('/',async(req,res)=>{
 router.post ('/',async(req,res)=>{
     const packing_lot = new PackingLot ({
         name:req.body.name,
+        initial:req.body.initial,
         total_spots:req.body.total_spots,
         created_at:req.body.created_at
     })  
