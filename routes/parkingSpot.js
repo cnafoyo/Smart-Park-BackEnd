@@ -44,5 +44,15 @@ router.patch('/:id',async(req,res)=>{
     }
 })
 
+//Get single Parking Spot
+router.get('/lot/:spot_name',async(req,res)=>{
+    try {
+        const parkingspots=await PackingSpot.find({parking_lot:req.params.spot_name})
+        res.json(parkingspots)
+    }catch {
+        res.send('Error :'+err)
+    }
+})
+
 module.exports=router
 
