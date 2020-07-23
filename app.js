@@ -1,8 +1,32 @@
 const express = require('express');
+
+const mongoose = require('mongoose')
+
+const url = 'mongodb://localhost/SmartPark'
+
 const app = express();
 
-const plateCheckRoutes = require('./api/routes/checkRegistration');
+//connect app with database
+mongoose.connect(url, { useNewUrlParser: true })
 
+const con=mongoose.connection
+
+con.on('open',()=>{
+    console.log('Connected..')
+})
+
+app.use(express.json())
+
+const plateCheckRoutes = require('./routes/checkRegistration');
 app.use('/checkRegistration',plateCheckRoutes);
 
+const packinglotRouter=require('./routes/parkingLot')
+app.use('/packinglot',packinglotRouter)
+
+
 module.exports = app;
+
+app.listen(9000, ()=>{
+    console.log("Server started");
+})
+
