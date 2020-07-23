@@ -23,6 +23,9 @@ app.use('/checkRegistration',plateCheckRoutes);
 const packinglotRouter=require('./routes/parkingLot')
 app.use('/packinglot',packinglotRouter)
 
+const packingspotRouter=require('./routes/parkingSpot')
+app.use('/packingspot',packingspotRouter)
+
 
 module.exports = app;
 
