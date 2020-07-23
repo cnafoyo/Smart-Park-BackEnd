@@ -44,10 +44,20 @@ router.patch('/:id',async(req,res)=>{
     }
 })
 
-//Get single Parking Spot
-router.get('/lot/:spot_name',async(req,res)=>{
+//Get Parking Spot by Lot
+router.get('/lot/name/:spot_name',async(req,res)=>{
     try {
         const parkingspots=await PackingSpot.find({parking_lot:req.params.spot_name})
+        res.json(parkingspots)
+    }catch {
+        res.send('Error :'+err)
+    }
+})
+
+//Get Parking Spot by access type
+router.get('/lot/access/:access_type',async(req,res)=>{
+    try {
+        const parkingspots=await PackingSpot.find({access_type:req.params.access_type})
         res.json(parkingspots)
     }catch {
         res.send('Error :'+err)
