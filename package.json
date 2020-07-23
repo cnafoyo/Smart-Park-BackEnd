@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/BandLinc/Smart-Park-BackEnd/issues"
   },
-  "homepage": "https://github.com/BandLinc/Smart-Park-BackEnd#readme"
+  "homepage": "https://github.com/BandLinc/Smart-Park-BackEnd#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
