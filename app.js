@@ -1,6 +1,8 @@
 const express = require('express');
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+
+const bodyParser = require('body-parser');
 
 const url = 'mongodb://smartpark:test2020@ds155461.mlab.com:55461/heroku_qjr222tc'
 
@@ -16,6 +18,19 @@ con.on('open',()=>{
 })
 
 app.use(express.json())
+
+app.use((req, res, next) => {
+  res.header('Access-Ccontrol-Allow-Origin', '*');
+  res.header('Access-Ccontrol-Allow-Header', 'Origin, X-Request-With, Content-Type, Accept, Authorization');
+  if(req.method === 'OPOTIONS'){
+    res.header('Access-Ccontrol-Allow-Methods', 'PUT, POST, PATCH, GET, DELETE');
+    return res.status(200).json({});
+  }
+  next();
+});
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 const plateCheckRoutes = require('./routes/checkRegistration');
 app.use('/checkRegistration',plateCheckRoutes);
