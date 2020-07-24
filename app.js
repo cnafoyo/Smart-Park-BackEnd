@@ -2,7 +2,7 @@ const express = require('express');
 
 const mongoose = require('mongoose')
 
-const url = 'mongodb://localhost/SmartPark'
+const url = 'mongodb://lincoln:test2020@ds047571.mlab.com:47571/heroku_2khk0xr9'
 
 const app = express();
 
